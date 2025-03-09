@@ -46,11 +46,11 @@ function Home() {
     setGraphUrl("");
 
     try {
-<<<<<<< HEAD
-      const response = await axios.get(`https://viz-ylzs.onrender.com/weather?city=${city}`);// on github I have chnaged the url instead of api i put the backend url of python app that is = https://viz-ylzs.onrender.com
-=======
+
       const response = await axios.get(`https://viz-ylzs.onrender.com/weather?city=${city}`);
->>>>>>> 832ac8668cfc805c3be30c067b4b9085a0886866
+
+      const response = await axios.get(`https://viz-ylzs.onrender.com/weather?city=${city}`);
+
       const data = response.data;
 
       if (data.error) {
