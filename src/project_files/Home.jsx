@@ -46,11 +46,7 @@ function Home() {
     setGraphUrl("");
 
     try {
-
-      const response = await axios.get(`https://viz-ylzs.onrender.com/weather?city=${city}`);
-
-      const response = await axios.get(`https://viz-ylzs.onrender.com/weather?city=${city}`);
-
+      const response = await axios.get(`https://viz-ylzs.onrender.com/weather?city=${city}`);// on github I have chnaged the url instead of api i put the backend url of python app that is = https://viz-ylzs.onrender.com
       const data = response.data;
 
       if (data.error) {
@@ -61,6 +57,7 @@ function Home() {
     } catch (err) {
       setError("Network error. Please try again.");
     }
+    
 
     setLoading(false);
   };
