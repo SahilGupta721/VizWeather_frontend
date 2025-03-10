@@ -6,7 +6,7 @@ import '../css/About.css';
 import "../css/Visualize.css";
 import App from './App.jsx';
 import Home from './Home.jsx';
-import About from './about.jsx';  // Updated to match the component name
+import About from './About.jsx';  // Updated to match the component name
 import Visualize from './Visualize.jsx';
 import React from 'react';
 
