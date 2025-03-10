@@ -7,7 +7,7 @@ import axios from "axios";
 
 const winterVideo = "https://res.cloudinary.com/doype8ygx/video/upload/v1741510586/exxaa6aamaq3nkad9lfv.mp4";
 const summerVideo = 'https://res.cloudinary.com/doype8ygx/video/upload/v1741510614/lhgocyl8ygmvppz9qjzy.mp4';
-const rainyVideo = 'https://res.cloudinary.com/doype8ygx/video/upload/v1741510595/xkre6mxr58oxz4yazulm.mp4'
+const rainyVideo = 'https://res.cloudinary.com/doype8ygx/video/upload/v1741510595/xkre6mxr58oxz4yazulm.mp4';
 import defaultVideo from "../videos/weather1.mp4";
 
 function Home() {
