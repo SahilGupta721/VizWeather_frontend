@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+}
+#visualize-container{
+    display: flex;
+    justify-content: center;
+}
+
+#graph-container>img{
+    display: block;
+}
+
+#graph-container{
+    margin-top:100px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    max-width: 100%;
+    
+    padding: 20px; /* Add some padding around the image */
+    box-sizing: border-box; 
+
+}
+#graph-container>img{
+    width: 60%; 
+    height: auto; 
+    display: block; 
+    backdrop-filter: blur(8px);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2)
+}
+@media (max-width: 570px) {
+    #graph-container>img
+    {
+        width: 100%;
+    }
+}

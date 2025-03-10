@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    color: white;
+    margin: auto;
+    font-size: 32px;
+}
+
+#container {
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+
+#video_home > video {
+    object-fit: cover;
+    z-index: -1;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+}
+
+#outline {
+    padding: 15px;
+    border: 2px solid white;
+    display: inline-block;
+    margin: 100px 0 0 140px;
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+}
+
+#details {
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    height:470px    ;
+    margin-top: 10px;
+}
+
+.weather-info {
+    margin: 5px 0 0 5px;
+}
+
+.weather-details > p {
+    margin-top: 30px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: large;
+}
+
+#city_name {
+    width: 100%;
+    padding: 4px;
+    padding-left: 35px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-weight: bolder;
+    font-size: large;
+    background: transparent;
+}
+
+.default #city_name {
+    color: white;
+}
+
+#input_search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 85%;
+    border-radius: 50px;
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: black;
+    font-size: 20px;
+}
+
+.visualize {
+    padding: 15px 0;
+    width: 150px;
+    color: black;
+    background-color: #acacac;
+    border: 2px solid transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+#visualize_btn {
+    align-self: flex-end;
+    display: inline-block;
+    margin: 0 140px 50px 0;
+}
+
+#visualize {
+    cursor: pointer;
+}
+
+#content {
+    display: flex;
+    justify-content: space-around;
+}
+
+#video_home {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#video_home video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+/* Cold Weather */
+.cold .navbar1> a {
+    color: black;
+    font-size: large;
+    text-decoration: none;
+}
+.cold .navbar2>a{
+    color: black;
+}
+.cold button > span {
+    background-color: black;
+    font-size: large;
+    text-decoration: none;
+}
+
+.cold #outline {
+    border: 2px solid black;
+    color: black;
+}
+
+.cold .weather-details p {
+    color: black;
+}
+
+.cold #city_name {
+    color: black;
+}
+
+.cold .visualize {
+    background-color: skyblue;
+}
+
+.cold #header {
+    color: black;
+}
+
+/* Hot Weather */
+.hot .navbar1 > a {
+    color: white;
+    font-size: large;
+    text-decoration: none;
+}
+
+.hot button > span {
+    background-color: white;
+    font-size: large;
+    text-decoration: none;
+}
+.hot .navbar2>a{
+    color: white;
+}
+
+.hot #outline {
+    border: 2px solid #2596be;
+    color: black;
+}
+
+.hot #header {
+    color: #2596be;
+}
+
+.hot .weather-details p {
+    color: white;
+}
+
+.hot #city_name {
+    color: white;
+}
+
+.hot .visualize {
+    background-color: #2596be;
+}
+
+/* Rainy Weather */
+.rainy .navbar > a {
+    color: #fcb63d;
+    font-size: large;
+    text-decoration: none;
+}
+.rainy .navbar2>a{
+    color:  #fcb63d;
+}
+.rainy button > span {
+    background-color: #fcb63d;
+    font-size: large;
+    text-decoration: none;
+}
+
+.rainy #outline {
+    border: 2px solid black;
+    color: black;
+}
+
+.rainy #header {
+    color: #fcb63d;
+}
+
+.rainy .weather-details p,
+#city_name {
+    color: #fcb63d;
+    font-weight: 500;
+}
+
+.rainy .visualize {
+    background-color: #fcb63d;
+}
+
+/* Fade Effect */
+
+
+/* Media Queries */
+@media (max-width: 925px) {
+    #content {
+        display: block;
+    }
+    #outline {
+        justify-content: center;
+        width: 50%;
+        margin: 100px 0 0 73px;
+    }
+
+    #visualize_btn {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #visualize_btn > button {
+        margin-top: 20px;
+    }
+    .weather-info {
+        width: 80%;
+    }
+    .weather-details{
+        margin-right: 2px;
+    }
+}
