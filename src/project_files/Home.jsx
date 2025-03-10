@@ -6,8 +6,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
 
 const winterVideo = "https://res.cloudinary.com/doype8ygx/video/upload/v1741510586/exxaa6aamaq3nkad9lfv.mp4";
-const summerVideo = 'https://res.cloudinary.com/doype8ygx/video/upload/v1741510614/lhgocyl8ygmvppz9qjzy.mp4';
-const rainyVideo = 'https://res.cloudinary.com/doype8ygx/video/upload/v1741510595/xkre6mxr58oxz4yazulm.mp4';
+const summerVideo = "https://res.cloudinary.com/doype8ygx/video/upload/v1741510614/lhgocyl8ygmvppz9qjzy.mp4";
+const rainyVideo = "https://res.cloudinary.com/doype8ygx/video/upload/v1741510595/xkre6mxr58oxz4yazulm.mp4";
 import defaultVideo from "../videos/weather1.mp4";
 
 function Home() {
@@ -23,6 +23,18 @@ function Home() {
 
   const navigate = useNavigate();
 
+  // Load saved graph URL and city when the page reloads
+  useEffect(() => {
+    const savedGraphUrl = localStorage.getItem("graphUrl");
+    const savedCity = localStorage.getItem("city");
+
+    if (savedGraphUrl && savedCity) {
+      setGraphUrl(savedGraphUrl);
+      setGraphVisible(true);
+      setCity(savedCity); // Restore city name
+    }
+  }, []);
+
   // Reset state to default values
   const resetState = () => {
     setCity("");
@@ -32,6 +44,8 @@ function Home() {
     setGraphUrl("");
     setGraphLoading(false);
     setGraphVisible(false);
+    localStorage.removeItem("graphUrl"); // Clear saved graph URL
+    localStorage.removeItem("city"); // Clear saved city
   };
 
   // Fetch weather data for the entered city
@@ -74,9 +88,14 @@ function Home() {
       if (graphResponse.status === 200) {
         const graphUrl = URL.createObjectURL(graphResponse.data);
         setGraphUrl(graphUrl);
-        setGraphVisible(true); 
-        // Navigate to Visualize page with graphUrl as state
-        navigate('/visualize', { state: { graphUrl } });
+        setGraphVisible(true);
+
+        // Save the graph URL to local storage
+        localStorage.setItem("graphUrl", graphUrl);
+        localStorage.setItem("city", city); // Store city for consistency
+
+        // Navigate to Visualize page with graphUrl as query parameter
+        navigate(`/visualize?graphUrl=${encodeURIComponent(graphUrl)}`);
       } else {
         setError("Error fetching graph. Please try again.");
       }
@@ -171,6 +190,8 @@ function Home() {
               )}
 
               {graphLoading && <p>Loading graph...</p>}
+
+             
             </div>
           </div>
         </div>
@@ -179,7 +200,7 @@ function Home() {
         <button
           className={`visualize ${themeColor}`}
           onClick={fetchGraph}
-          disabled={!city.trim() || loading || !weather || graphLoading || graphUrl}
+          disabled={!city.trim() || loading || !weather || graphLoading}
         >
           Generate Graph
         </button>
