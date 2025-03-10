@@ -23,7 +23,7 @@
 
 }
 #graph-container>img{
-    width: 70%; 
+    width: 60%; 
     height: auto; 
     display: block; 
     backdrop-filter: blur(8px);

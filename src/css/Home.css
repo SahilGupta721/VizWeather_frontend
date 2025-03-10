@@ -39,9 +39,9 @@
 
 #details {
     border-radius: 20px;
-    height: 500px;
-    width: 400px;
     padding: 20px;
+    width: 100%;
+    height:470px    ;
     margin-top: 10px;
 }
 
@@ -140,12 +140,14 @@
 }
 
 /* Cold Weather */
-.cold .navbar > a {
+.cold .navbar1> a {
     color: black;
     font-size: large;
     text-decoration: none;
 }
-
+.cold .navbar2>a{
+    color: black;
+}
 .cold button > span {
     background-color: black;
     font-size: large;
@@ -174,7 +176,7 @@
 }
 
 /* Hot Weather */
-.hot .navbar > a {
+.hot .navbar1 > a {
     color: white;
     font-size: large;
     text-decoration: none;
@@ -184,6 +186,9 @@
     background-color: white;
     font-size: large;
     text-decoration: none;
+}
+.hot .navbar2>a{
+    color: white;
 }
 
 .hot #outline {
@@ -213,7 +218,9 @@
     font-size: large;
     text-decoration: none;
 }
-
+.rainy .navbar2>a{
+    color:  #fcb63d;
+}
 .rainy button > span {
     background-color: #fcb63d;
     font-size: large;
@@ -247,11 +254,10 @@
     #content {
         display: block;
     }
-
     #outline {
         justify-content: center;
         width: 50%;
-        margin: 100px 0 0 100px;
+        margin: 100px 0 0 73px;
     }
 
     #visualize_btn {
@@ -263,52 +269,10 @@
     #visualize_btn > button {
         margin-top: 20px;
     }
-}
-
-@media (max-width: 925px) {
     .weather-info {
         width: 80%;
     }
-}
-
-@media (max-width: 650px) {
-    .weather-info {
-        width: 60%;
-    }
-}
-
-@media (max-width: 460px) {
-    .weather-info {
-        width: 51%;
-    }
-}
-
-@media (max-width: 393px) {
-    .weather-info {
-        width: 39%;
-    }
-    
-    #outline {
-        margin-left: 60px;
-        width: 65%;
-    }
-
-    .weather-details {
-        width: 42%;
-    }
-}
-
-@media (max-width: 313px) {
-    .weather-info {
-        width: 39%;
-    }
-    
-    #outline {
-        margin-left: 43px;
-        width: 60%;
-    }
-
-    .weather-details {
-        width: 40%;
+    .weather-details{
+        margin-right: 2px;
     }
 }
