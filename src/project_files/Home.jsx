@@ -6,8 +6,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
 
 const winterVideo = "https://res.cloudinary.com/doype8ygx/video/upload/v1741510586/exxaa6aamaq3nkad9lfv.mp4";
-const summerVideo ='https://res.cloudinary.com/doype8ygx/video/upload/v1741510614/lhgocyl8ygmvppz9qjzy.mp4';
-const rainyVideo ='https://res.cloudinary.com/doype8ygx/video/upload/v1741510595/xkre6mxr58oxz4yazulm.mp4'
+const summerVideo = 'https://res.cloudinary.com/doype8ygx/video/upload/v1741510614/lhgocyl8ygmvppz9qjzy.mp4';
+const rainyVideo = 'https://res.cloudinary.com/doype8ygx/video/upload/v1741510595/xkre6mxr58oxz4yazulm.mp4'
 import defaultVideo from "../videos/weather1.mp4";
 
 function Home() {
@@ -46,12 +46,8 @@ function Home() {
     setGraphUrl("");
 
     try {
-<<<<<<< HEAD
-      const response = await axios.get(`https://viz-ylzs.onrender.com/weather?city=${city}`);// on github I have chnaged the url instead of api i put the backend url of python app that is = https://viz-ylzs.onrender.com
-=======
-      const response = await axios.get(`https://viz-ylzs.onrender.com/weather?city=${city}`);
->>>>>>> 832ac8668cfc805c3be30c067b4b9085a0886866
-      const data = response.data;
+      const weatherResponse = await axios.get(`https://viz-ylzs.onrender.com/weather?city=${city}`);
+      const data = weatherResponse.data;
 
       if (data.error) {
         setError(data.error);
@@ -73,10 +69,10 @@ function Home() {
     setGraphVisible(false);
 
     try {
-      const response = await axios.get(`https://viz-ylzs.onrender.com/hourly?city=${city}`, { responseType: "blob" });
+      const graphResponse = await axios.get(`https://viz-ylzs.onrender.com/hourly?city=${city}`, { responseType: "blob" });
 
-      if (response.status === 200) {
-        const graphUrl = URL.createObjectURL(response.data);
+      if (graphResponse.status === 200) {
+        const graphUrl = URL.createObjectURL(graphResponse.data);
         setGraphUrl(graphUrl);
         setGraphVisible(true); 
         // Navigate to Visualize page with graphUrl as state
