@@ -9,7 +9,7 @@ function Navbar({ onHomeClick }) {
     const navigate = useNavigate();
 
     const handleHomeClick = () => {
-        // Trigger the reset function passed from the parent (Home)
+        // Triggers the reset function passed from the parent (Home)
         if (onHomeClick) {
             onHomeClick(); // Reset the state
         }
@@ -27,9 +27,9 @@ function Navbar({ onHomeClick }) {
                             <span className="material-symbols-light--home-outline"></span>
                         </button>
                     </li>
-                    <li className='navbar2'>
+                    {/* <li className='navbar2'>
                     <NavLink  to="/about"><span className="material-symbols-outlined">info</span></NavLink>
-                    </li>
+                    </li> */}
                 </ul>       
             </nav>
         </div>
