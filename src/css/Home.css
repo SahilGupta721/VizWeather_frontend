@@ -32,9 +32,15 @@
     padding: 15px;
     border: 2px solid white;
     display: inline-block;
-    margin: 64px 0 0 140px;
+     margin: 0 20px 0 20px; 
     border-radius: 20px;
     backdrop-filter: blur(3px);
+}
+.pop{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 250px;
+    margin-top:70px;
 }
 
 #details {
@@ -90,7 +96,7 @@
     font-size: 20px;
 }
 
-.visualize {
+ .visualize {
     padding: 15px 0;
     width: 150px;
     color: black;
@@ -105,17 +111,15 @@
     transition: background-color 0.3s ease;
 }
 
-/* Ensure the button is on top of other elements and positioned properly */
+
 #visualize_btn {
-    align-self: flex-end;
-    display: inline-block;
-    margin: 0 140px 50px 0;
-    position: relative; /* Ensure button positioning */
-    z-index: 1000; /* Ensure the button appears on top of other elements */
+    display:flex;
+    justify-content: flex-start;
+    margin:20px 0 20px 355px ;
+    position: relative;
     cursor: pointer;
 }
 
-/* Button hover effect */
 .visualize:hover {
     background-color: #45a049;
 }
@@ -123,10 +127,6 @@
 .visualize:disabled {
     background-color: #c0c0c0;
     cursor: not-allowed;
-}
-
-#visualize {
-    cursor: pointer;
 }
 
 #content {
@@ -147,15 +147,6 @@
     height: 100%;
     object-fit: cover;
 }
-
-.fade-out {
-    opacity: 0;
-}
-
-.fade-in {
-    opacity: 1;
-}
-
 /* Cold Weather */
 .cold .navbar1> a {
     color: black;
@@ -184,7 +175,7 @@
     color: black;
 }
 
-.cold .visualize {
+.cold.visualize {
     background-color: skyblue;
 }
 
@@ -214,7 +205,7 @@
 }
 
 .hot #header {
-    color: #2596be;
+    color: white;
 }
 
 .hot .weather-details p {
@@ -225,7 +216,7 @@
     color: white;
 }
 
-.hot .visualize {
+.hot.visualize {
     background-color: #2596be;
 }
 
@@ -259,34 +250,34 @@
     font-weight: 500;
 }
 
-.rainy .visualize {
+.rainy.visualize {
     background-color: #fcb63d;
 }
 
-/* Fade Effect */
-
-
 /* Media Queries */
-@media (max-width: 925px) {
-    #content {
-        display: block;
-    }
-    #outline {
-        justify-content: center;
-        width: 50%;
-        margin: 100px 0 0 73px;
-    }
+@media (max-width: 930px) {
+   .pop{
+    display: flex;
+    justify-content: center;
+    margin:70px 0 0 0  ;
+    
+   }
+  
+   #visualize_btn{
+    display: flex;
+    justify-content: center;
+    margin:20px 0 20px 0;
 
-    #visualize_btn {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-top: 20px;  /* Adjust for proper spacing */
-    }
+   }
 
+   
     .visualize {
-        width: auto; /* Adjust width for mobile */
+        width: auto;
         margin-top: 20px;
+        
+    }
+    .visualize .cold {
+        background-color: skyblue;
     }
 
     .weather-info {
@@ -294,5 +285,11 @@
     }
     .weather-details{
         margin-right: 2px;
+    }
+}
+
+@media (max-width: 425px) {
+    #outline{
+        width: 100%;
     }
 }

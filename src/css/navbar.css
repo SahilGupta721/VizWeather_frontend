@@ -1,3 +1,7 @@
+#navbar{
+    display: flex;
+    justify-content: center;
+}
 .navbar1{
     margin-top: 20px;
 }

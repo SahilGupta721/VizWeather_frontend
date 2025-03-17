@@ -23,7 +23,7 @@ function Home() {
 
   const navigate = useNavigate();
 
-  // Load saved graph URL and city when the page reloads
+  
   useEffect(() => {
     const savedGraphUrl = localStorage.getItem("graphUrl");
     const savedCity = localStorage.getItem("city");
@@ -92,7 +92,7 @@ function Home() {
 
         // Save the graph URL to local storage
         localStorage.setItem("graphUrl", graphUrl);
-        localStorage.setItem("city", city); // Store city for consistency
+        localStorage.setItem("city", city); 
 
         // Navigate to Visualize page with graphUrl as query parameter
         navigate(`/visualize?graphUrl=${encodeURIComponent(graphUrl)}`);
@@ -148,6 +148,7 @@ function Home() {
   }, [weather]);
 
   return (
+    <>
     <div id="content" className={themeColor}>
       <div id="container">
         <div id="video_home">
@@ -196,16 +197,18 @@ function Home() {
           </div>
         </div>
       </div>
-      <section id="visualize_btn">
-        <button
-          className={`visualize ${themeColor}`}
-          onClick={fetchGraph}
-          disabled={!city.trim() || loading || !weather || graphLoading}
-        >
-          Generate Graph
-        </button>
-      </section>
+      
     </div>
+    <section id="visualize_btn">
+    <button
+      className={`visualize ${themeColor}`}
+      onClick={fetchGraph}
+      disabled={!city.trim() || loading || !weather || graphLoading}
+    >
+      Generate Graph
+    </button>
+  </section>
+  </>
   );
 }
 
