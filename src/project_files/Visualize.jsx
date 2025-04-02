@@ -23,7 +23,7 @@ function Visualize() {
   }, [location.state]);
 
   useEffect(() => {
-    // This effect ensures that the graph remains visible even if you resize or refresh the page
+   
     if (graphUrl) {
       localStorage.setItem("graphUrl", graphUrl);
     }
